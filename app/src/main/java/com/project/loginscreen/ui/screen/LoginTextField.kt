@@ -3,11 +3,18 @@ package com.project.loginscreen.ui.screen
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import com.project.loginscreen.ui.theme.Black
+import com.project.loginscreen.ui.theme.Typography
+import com.project.loginscreen.ui.theme.focusedTextFieldText
+import com.project.loginscreen.ui.theme.textFieldContainer
+import com.project.loginscreen.ui.theme.unfocusedTextFieldText
 
 @Composable
 fun LoginTextField(
@@ -26,6 +33,21 @@ fun LoginTextField(
                 style = MaterialTheme.typography.labelMedium,
                 color = uiColor
             )
+        },
+        colors = TextFieldDefaults.colors(
+            unfocusedPlaceholderColor = MaterialTheme.colorScheme.unfocusedTextFieldText,
+            focusedPlaceholderColor = MaterialTheme.colorScheme.focusedTextFieldText,
+            unfocusedContainerColor = MaterialTheme.colorScheme.textFieldContainer,
+            focusedContainerColor = MaterialTheme.colorScheme.textFieldContainer,
+        ),
+        trailingIcon = {
+            TextButton(onClick = {}) {
+                Text(
+                    text = trailing,
+                    style = Typography.labelMedium.copy(fontWeight = FontWeight.Medium),
+                    color = uiColor,
+                )
+            }
         }
     )
 }
