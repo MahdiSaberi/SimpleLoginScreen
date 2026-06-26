@@ -49,12 +49,13 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                     trailing = "",
                     modifier = Modifier.fillMaxWidth()
                 )
-                Spacer(modifier = Modifier.width(16.dp))
+                Spacer(modifier = Modifier.height(16.dp))
                 LoginTextField(
                     label = "Password",
-                    trailing = "",
+                    trailing = "Forgot?",
                     modifier = Modifier.fillMaxWidth()
                 )
+                Spacer(modifier = Modifier.height(16.dp))
                 Button(
                     colors = ButtonDefaults.buttonColors(
                         containerColor = if (isSystemInDarkTheme()) BlueGray else Black,
