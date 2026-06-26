@@ -25,6 +25,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.project.loginscreen.R
 import com.project.loginscreen.ui.theme.Black
 
@@ -34,15 +35,18 @@ fun LoginScreen(modifier: Modifier = Modifier) {
         Column(modifier = Modifier.fillMaxSize()) {
             TopSection()
             Spacer(modifier = Modifier.height(16.dp))
-            BottomSection()
+        }
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 30.dp)
+        ) {
+//            LoginTextField(label = "Username", trailing = "")
+//            LoginTextField(label = "Password", trailing = "")
         }
     }
 }
 
-@Composable
-private fun BottomSection() {
-
-}
 @Composable
 private fun TopSection() {
 
@@ -63,20 +67,20 @@ private fun TopSection() {
             modifier = Modifier.padding(72.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Icon(
-                modifier = Modifier.size(64.dp),
+            Image(
+                modifier = Modifier.size(80.dp),
                 painter = painterResource(id = R.drawable.logo),
                 contentDescription = stringResource(id = R.string.app_name),
-                tint = uiColor
+//                tint = uiColor
             )
             Spacer(modifier = Modifier.width(4.dp))
             Column {
                 Text(
-                    text = stringResource(id = R.string.banana),
-                    style = MaterialTheme.typography.headlineMedium,
+                    text = stringResource(id = R.string.cherry_mate),
+                    style = MaterialTheme.typography.headlineLarge,
                     color = uiColor,
 //                            fontFamily = Rubik,
-//                            fontSize = 40.sp
+//                            fontSize = 32.sp
                 )
                 Text(
                     text = stringResource(id = R.string.enjoy_chat),
