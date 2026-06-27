@@ -19,6 +19,10 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -34,6 +38,9 @@ import com.project.loginscreen.ui.theme.Typography
 
 @Composable
 fun LoginScreen(modifier: Modifier = Modifier) {
+    var username by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+
     Surface {
         Column(modifier = Modifier.fillMaxSize()) {
             TopSection()
@@ -47,15 +54,23 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                 LoginTextField(
                     label = "Username",
                     trailing = "",
-                    modifier = Modifier.fillMaxWidth()
+                    onValueChange = { username = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    value = username
                 )
+
                 Spacer(modifier = Modifier.height(16.dp))
+
                 LoginTextField(
                     label = "Password",
                     trailing = "Forgot?",
-                    modifier = Modifier.fillMaxWidth()
+                    onValueChange = { password = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    value = password
                 )
+
                 Spacer(modifier = Modifier.height(16.dp))
+
                 Button(
                     colors = ButtonDefaults.buttonColors(
                         containerColor = if (isSystemInDarkTheme()) BlueGray else Black,
