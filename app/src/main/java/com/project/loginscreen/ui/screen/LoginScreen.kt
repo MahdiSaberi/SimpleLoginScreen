@@ -37,11 +37,11 @@ fun LoginScreen(modifier: Modifier = Modifier) {
     Surface {
         Column(modifier = Modifier.fillMaxSize()) {
             TopSection()
+
             Spacer(modifier = Modifier.height(16.dp))
 
             Column(
                 modifier = Modifier
-                    .fillMaxSize()
                     .padding(horizontal = 30.dp)
             ) {
                 LoginTextField(
@@ -72,6 +72,27 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                         style = Typography.labelMedium.copy(fontWeight = FontWeight.Medium)
                     )
                 }
+            }
+
+            Column(
+                modifier = Modifier
+                    .padding(horizontal = 40.dp)
+            ) {
+                Spacer(modifier = modifier.height(24.dp))
+
+                Text(
+                    modifier = Modifier.align(Alignment.CenterHorizontally),
+                    text = "Or continue with",
+                    style = Typography.labelMedium.copy(fontWeight = FontWeight.Medium)
+                )
+
+                Spacer(modifier = modifier.height(24.dp))
+
+                SocialMediaLogin(logo = R.drawable.google, text = "Google")
+
+                Spacer(modifier = modifier.height(8.dp))
+
+                SocialMediaLogin(logo = R.drawable.facebook, text = "Facebook")
             }
         }
     }
