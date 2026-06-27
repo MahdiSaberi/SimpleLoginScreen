@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginScreen</string>
+    <string name="app_name">SimpleLoginScreen</string>
     <string name="cherry_mate">CherryMate</string>
     <string name="enjoy_chat">Enjoy the Chat</string>
     <string name="login">Login</string>

@@ -24,6 +24,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LoginScreen"
+rootProject.name = "SimpleLoginScreen"
 include(":app")
  
